@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @Sleop-deprivation (leo)
+- 👋 Hi, I’m @Sleop-deprivation (Leo Schindler-Gerendasi)
 - 🎮 I’m interested in game ing
 - 💻 I’m currently learning game design/development at college
 - 💞️ I’m looking to collaborate on things later
