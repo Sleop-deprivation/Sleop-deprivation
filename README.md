@@ -2,7 +2,7 @@
 - 🎮 I’m interested in coding and gaming
 - 💻 I’m currently learning game design and development at RIT
 - 💞️ I’m looking to collaborate on things over the summer and/or fall as a cooperative education position
-- 📫 How to reach me ... shoot me an email at ls1539@rit.edu
+- 📫 How to reach me: shoot me an email at ls1539@rit.edu
 - 👍 
 
 <!---
