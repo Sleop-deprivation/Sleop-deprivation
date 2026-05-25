@@ -1,8 +1,8 @@
 - 👋 Hi, I’m @Sleop-deprivation (Leo Schindler-Gerendasi)
-- 💻 I’m interested in coding, and have experience with audio compositions and UI/UX
-- 🎮 I’m currently learning game design and development at RIT
-- 💞️ I’m looking to collaborate on things over the summer as a cooperative education position
-- 📫 How to reach me: shoot me an email at ls1539@rit.edu
+- 💻 I’m interested in generalist coding, and have experience with audio compositions and UI/UX
+- 🎮 I have a BS and MS in Game Design and Development from RIT
+- 💞️ I’m looking to collaborate on things in a full-time or contractor job
+- 📫 How to reach me: shoot me an email at sleopdeprivation@gmail.com
 - 👍 
 
 <!---
