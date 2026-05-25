@@ -1,0 +1,110 @@
+*{
+    font-family: "Cascadia Code", monospace;
+    text-align: center;
+}
+
+body{
+    background-color: #141419;
+    padding: 5px;
+}
+
+#output{
+    color: chartreuse;
+    font-size: 40pt;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#quintuple-babble {
+    display: none;
+}
+
+button{
+    width: 200px;
+    height: 50px;
+}
+
+@media only screen and (min-width: 320px) {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    html, body, .container {
+        height: 100%;
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+        background-color: #174287;
+        color: #f5f5f5;
+        padding: .8rem;
+        margin: 0;
+        text-align: center;
+        font-family: 'Space Mono', monospace;
+    }
+
+    #output {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        background-color: #23d160;
+    }
+
+    button {
+        width: 300px;
+        height: 75pt;
+        font-size: 1.5rem;
+    }
+
+    body {
+        color:darkgray;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    h1 {
+        background-color: #ff3680;
+    }
+    
+    .container {
+        display: block;
+        margin: 1rem;
+        text-align: left;
+    }
+
+    #output {
+        text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1408px) {            
+    button {
+        width: 210px;
+        height: 50pt;
+        font-size: 1.2rem;
+    }
+
+    #quintuple-babble {
+        display: inline;
+    }
+
+    h1 {
+        font-size: 2rem;
+        background-color: #610b61;
+        color: #f5f5f5;
+    }
+}

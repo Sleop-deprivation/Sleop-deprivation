@@ -1,0 +1,560 @@
+body
+{
+    background-color: #5ab5fb;
+    font-size: 85%;
+    margin: 2.5em 4em;
+    background-position: 43% 50%;
+    background-repeat: no-repeat;
+    background-size: 60vw;
+    background-clip: unset;
+}
+div a:link
+{
+    color: rgb(29, 0, 214);
+    text-decoration: none;
+}
+div a:visited
+{
+    color: rgb(83, 0, 139);
+}
+div a:focus
+{
+    color: white;
+}
+div a:hover
+{
+    text-decoration: underline;
+}
+div a:active
+{
+    color: aqua;
+}
+
+#sections, nav:not(.is-link)
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #3b5bf8;
+    padding: 0.25em;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 115%;
+}
+#sections > a, #accounts > nav > a
+{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#sections > a:hover, #accounts > nav > a:hover
+{
+    text-decoration: underline;
+}
+
+#sections
+{
+    display: none;
+}
+
+#top-divider
+{
+    align-self: center;
+    background-color:#3b5bf8;
+    color: #3b5bf8;
+    width: 100%;
+    height: 2px;
+    border-color: #3b5bf8;
+    border-style: solid;
+}
+
+#projects-a
+{
+    grid-area: projects-a;
+    grid-column: 1 / span 2;
+}
+#projects-b
+{
+    grid-area: projects-b;
+    grid-column: 1 / span 2;
+}
+#projects-c
+{
+    grid-area: projects-c;
+    grid-column: 1 / span 2;
+}
+#projects-d
+{
+    grid-area: projects-d;
+    grid-column: 6 / span 2;
+}
+#projects-e
+{
+    grid-area: projects-e;
+    grid-column: 6 / span 2;
+}
+#projects-f
+{
+    grid-area: projects-f;
+    grid-column: 6 / span 2;
+}
+
+#projectsimg-a {
+    grid-area: projectsimg-a;
+    grid-column: 2 / span 2;
+    left: 7vw;
+    bottom: -6vh;
+}
+#projectsimg-b {
+    grid-area: projectsimg-b;
+    grid-column: 2 / span 2;
+    left: 2vw;
+    bottom: -1vh;
+}
+#projectsimg-c {
+    grid-area: projectsimg-c;
+    grid-column: 2 / span 2;
+    left: 4vw;
+    bottom: 5vh;
+}
+#projectsimg-d {
+    grid-area: projectsimg-d;
+    grid-column: 5 / span 2;
+    left: -16vw;
+    bottom: -8vh;
+}
+#projectsimg-e
+{
+    grid-area: projectsimg-e;
+    grid-column: 5 / span 2;
+    left: -10vw;
+    bottom: 1vh;
+}
+#projectsimg-f {
+    grid-area: projectsimg-f;
+    grid-column: 5 / span 2;
+    left: -13vw;
+    bottom: 7vh;
+}
+
+.subsection-right > img, .subsection-left > img 
+{
+    position: relative;
+    width: 200%;
+    height: auto;
+    max-width:20em;
+    min-width:13em;
+}
+
+#accounts
+{
+    grid-area: accounts;
+}
+
+#accounts-header 
+{
+    grid-area: accounts-header;
+}
+
+.subsection-left
+{
+    text-align: left;
+    position: relative;
+    margin: 0%;
+}
+
+.subsection-right
+{
+    text-align: right;
+    position: relative;
+    margin: 0%;
+}
+
+.subsection-center
+{
+    text-align: center;
+}
+
+#center-image > img
+{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 23vw;
+    min-width:00px;
+    height: auto;
+    align-self: center;
+    z-index: 1;
+}
+
+#accounts > img
+{
+    max-width: 5em;
+}
+
+#header
+{
+    width: auto;
+    max-width: 40em;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#center-image
+{
+    grid-area: center-image;
+    position: relative;
+    bottom: 7em;
+    pointer-events: none;
+}
+
+#small_picture > img
+{
+    width:40em;
+    position: relative;
+    left:10em;
+    min-width: 20em;
+}
+
+div > h1, div > h2
+{
+    font-family: "Cooper", Arial, Helvetica, sans-serif;
+    z-index: 5;
+}
+
+div > h1
+{
+    color: #26489d;
+}
+
+div > h2
+{
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: -0.7rem;
+}
+
+.subsection-left > p
+{
+    padding-right: 15px;
+}
+
+.subsection-right > p
+{
+    padding-left: 15px;
+}
+
+#projects-header, #aboutme-header, #accounts-header > hr
+{
+    display: none;
+}
+
+#header p
+{
+    font-weight: bold;
+}
+
+div > p
+{
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+
+div > img
+{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#goat:hover
+{
+    transition: transform 0.2s;
+    transform:scale(1.05);
+    cursor:pointer;
+}
+
+#nowplaying
+{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    background-color: #6293e7;
+    border: 3px solid #3455e9;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform .5s;
+    transition-property: opacity;
+    opacity: 0;
+    z-index: 4;
+}
+
+@media only screen and (min-width: 1024px) 
+{
+    .subsection-left, .subsection-right
+    {
+        transition: transform .2s;
+    }
+
+    .focus
+    {
+        transform: scale(1.05);
+        z-index: 3;
+    }
+    .focus > img
+    {
+        z-index: 2;
+    }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 850px)
+{
+    body
+    {
+        background-image: none;
+    }
+
+    main {
+        display: grid;
+        align-items: start;
+        column-gap: 15px;
+        row-gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 0.25fr auto auto) 0.25fr auto;
+        grid-template-areas:
+            "aboutme-header aboutme-header aboutme-header"
+            "projects-d projects-e projects-f"
+            "projectsimg-d projectsimg-e projectsimg-f"
+            "projects-header projects-header projects-header"
+            "projects-a projects-b projects-c"
+            "projectsimg-a projectsimg-b projectsimg-c"
+            "accounts-header accounts-header accounts-header"
+            "accounts accounts accounts";
+    }
+
+    header
+    {
+        position: sticky;
+        padding: 0.5em;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #5ab5fb;
+        z-index: 1;
+        margin: 0%;
+        padding-bottom: 0.75em;
+    }
+    
+    #projects-header, #aboutme-header, #accounts-header
+    {
+        display: initial;
+        font-size: 125%;
+    }
+
+    hr
+    {
+        height: 0.5px;
+        color: white;
+        background-color: white;
+        border-style: solid;
+        margin-top: 15px;
+        visibility:visible;
+    }
+
+    #sections
+    {
+        display: flex;
+    }
+
+    #accounts-header > hr
+    {
+        display:revert;
+    }
+
+    h2, p {
+        text-align: center;
+    }
+
+    #projects-header
+    {
+        grid-area: projects-header;
+    }
+
+    #aboutme-header
+    {
+        grid-area: aboutme-header;
+    }
+
+    #center-image {
+        display: none;
+    }
+
+    #projectsimg-a, #projectsimg-b, #projectsimg-c, #projectsimg-d, #projectsimg-e, #projectsimg-f
+    {
+        position: initial;
+        justify-self: center;
+        display: inline;
+    }
+
+    #projectsimg-a, #projectsimg-b, #projectsimg-c, #projectsimg-d, #projectsimg-e, #projectsimg-f, #projects-a, #projects-b, #projects-c, #projects-d, #projects-e, #projects-f {
+        grid-column: initial;
+    }
+
+    #accounts > hr
+    {
+        display: block;
+        height: 0.5px;
+        color: white;
+        background-color: white;
+        border-style: solid;
+        margin-top: 15px;
+    }
+
+    .subsection-left > p, .subsection-right > p
+    {
+        padding: 0 10px;
+    }
+
+    .subsection-right > img, .subsection-left > img {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding:20px 0px;
+    }
+}
+
+@media only screen and (max-width: 850px) 
+{
+    body
+    {
+        background-image: none;
+        margin: 1.25em 1.5em;
+    }
+    
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        width: auto;
+    }
+    
+    #projects-header, #aboutme-header, #accounts-header
+    {
+        display: initial;
+        font-size: 125%;
+        padding-top: 10px;
+    }
+
+    #aboutme-header, .subsection-right
+    {
+        order: -1;
+        text-align:center;
+    }
+
+    .subsection-left
+    {
+        text-align:center;
+    }
+
+    hr
+    {
+        height: 0.5px;
+        color: white;
+        background-color: white;
+        border-style: solid;
+        visibility: visible;
+    }
+
+    #small_picture
+    {
+        visibility: collapse;
+    }
+
+    header
+    {
+        position: sticky;
+        padding: 0.5em;
+        top: -0.5px;
+        width: auto;
+        text-align: center;
+        background-color: #5ab5fb;
+        z-index: 2;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .subsection-center
+    {
+        text-align: center;
+        align-self: center;
+    }
+
+    #main_picture
+    {
+        display: none;
+    }
+
+    #center-image
+    {
+        display: none;
+    }
+
+    #projectsimg-a, #projectsimg-b, #projectsimg-c, #projectsimg-d, #projectsimg-e, #projectsimg-f
+    {
+        position: static;
+        left: 0;
+        bottom: 0;
+        max-width: 20em;
+        min-width: 5em;
+        height:auto;
+        margin: 0;
+        padding: 0;
+    }
+
+    #accounts-header
+    {
+        padding-top: 10px;   
+    }
+
+    #accounts-header > hr
+    {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    #accounts > nav
+    {
+        width: 70vw;
+    }
+
+    .subsection-right > img, .subsection-left > img {
+        position: relative;
+        width: 50vw;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #sections
+    {
+        display: flex;
+    }
+
+    #nowplaying
+    {
+        width: 95%;
+        bottom: initial;
+        right: initial;
+        top: 0;
+    }
+}

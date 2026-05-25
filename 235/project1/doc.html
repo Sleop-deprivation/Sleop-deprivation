@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <style>
+        body
+        {
+            background-color:lavender; 
+            font-family: 'Bahnschrift';
+            padding: 1em 5em;
+            text-align: center;
+        }
+
+        img
+        {
+            width: 20em;
+        }
+
+        #thin-screen
+        {
+            display: flex;
+            align-items: top;
+            padding: 0 2em;
+        }
+        #thin-screen p
+        {
+            justify-self: left;
+        }
+        #thin-screen img
+        {
+            justify-self: right;
+            padding-bottom: 1em;
+        }
+
+        ul, h3, li
+        {
+            text-align: left;
+        }
+
+        .image-reel
+        {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .image-reel > img
+        {
+            max-height: 20vh;
+            width: auto;
+        }
+
+        h1
+        {
+            font-family:'Comic Sans MS'; 
+            margin-top: -0.5em;
+        }
+
+        p > a
+        {
+            text-decoration: none;
+        }
+
+        p > a:hover
+        {
+            text-decoration: underline;
+        }
+
+    </style>
+    <title>doc.html</title>
+</head>
+<body>
+    <h3 style="text-align: center;">It is 10:30 PM as of updating this and I'm really tired, but we're still here with</h3>
+    <h1>
+        <span style="color:red;">d</span><span style="color:orange;">o</span><span style="color:yellow;">c</span><span style="color:yellowgreen;">.</span><span style="color:green;">h</span><span style="color:blue;">t</span><span style="color:indigo;">m</span><span style="color:violet;">l</span>
+    </h1>
+    <hr />
+    <h2 style="font-size: 200%;">Phase 2 Updates</h2>
+    <hr />
+    <h2>Major Layout Changes</h2>
+    <p>
+        The center collage now looks like a collage. It's a bit messy still, but realistically this is the best I can do
+        with my current CSS knowledge and time constraints. There are also now different layouts, with the mid-sized and
+        narrow layouts being far simpler. There are no more Donkey Kong references anymore (naturally), the header has a 
+        fun catchphrase, and with a bit of refining with knowledge I get late in the semester and future projects to fill
+        that pesky third project with no project, I can easily use this as a funky-looking portfolio.
+    </p>
+    <hr />
+
+    <h2>New Images</h2>
+    <div class="image-reel">
+        <img src="media/crossboa.png" alt="Crossboa">
+        <img src="media/jrpgshooter.PNG" alt="JRPG Shooter">
+        <img src="media/monkey2.png" alt="Monkey Boy">
+        <img src="media/goat.png" alt="Pixel-art goat by me :)">
+    </div>
+    <div class="image-reel">
+        <img src="media/me.jpg" alt="A photo of me circa 10/19/2022 at 10 PM">
+        <img src="media/hackerme.png" alt="Me photoshopped onto a stock photo hacker">
+        <img src="media/musicme.png" alt="Me photoshopped onto Megalovania">
+        <img src="src/Hacker1.jpg" alt="The original stock photo hacker">
+    </div>
+    <hr />
+    
+    <h2>Post-mortem</h2>
+    <p>
+        I sure learned something about overscoping myself and overcomplicating my own work. Between this project,
+        my IGME 202 project, midterms, and other work that I had (and still have!) these past two weeks, I 
+        was mentally drained and very ready to turn it in with a couple small issues by the time this was over, 
+        including some very cool and awesome temporary images. As you saw in my Phase 1 documentation, this is
+        really unlike me, and in circumstances like these I would ask for a longer extension than 48 hours, but
+        I've worked myself to the bone and I think I can give myself a break this one time. I can't keep working on
+        this single project forever, and if I gave myself more time I'd just burn myself out more than I already have.
+        I'd like to give a shoutout specifically to the issue where images wouldn't resize with the browser window. 
+        I could not figure out that bug, and I won't try to until I have more time. I would also like to
+        shout out Vinny and Joel of streaming group Vinesauce, whose Twitch VODs kept me sane throughout the process.
+        Now if you'll excuse me, I'm very tired and really want to check out NieR: Automata now that it's on
+        Switch. Thanks for reading my second rant. I don't have a funny video this time, but I still wish you
+        a good night or day or whenever you read this (:
+    </p>
+    <hr style="margin-bottom: 20em; "/>
+
+    <h2 style="font-size: 200%;">Phase 1</h2>
+    <hr />
+    <h2>Goal</h2>
+    <p>
+        My goal overall is to make the funkiest portfolio site possible that's also not visually designed awfully. This will be 
+        done by replicating the "Barrels and Kegs" section from the Donkey Kong Country manual (see links). The target audience
+        is anyone who would see my portfolio, generally game development studios and other programming workplaces. 
+    </p>
+    <hr />
+    <h2>Thinner Screens</h2>
+    <div id="thin-screen">
+        <p style="text-align:left;">
+            The plan is simple in theory: relocate the header and barrel (or whatever I replace that with) to the top quarter or so of 
+            the screen and keep it consistently there, while the text surrounding the barrel becomes akin to a vertically scrolling list 
+            taking up the rest of the screen real estate, with the barrel plane relocating to the bottom of that (see the accompanying sketch).
+        </p>
+        <img src="src/to-narrow.png" alt="The plan is simple !!" style="position:relative; text-align: right;" />
+    </div>
+    <hr />
+    <h2>Resources</h2>
+    <h3>Fonts used</h3>
+    <ul>
+        <li style="font-family: 'Cooper';">Cooper - included in Microsoft Windows 10</li>
+        <li style="font-family: 'Josefin Sans';">Josefin Sans - <a href="https://fonts.google.com/specimen/Josefin+Sans?query=josefin">Google Fonts page</a></li>
+    </ul>
+    <h3>Images (barrels were isolated from the pdf with photoshop)</h3>
+    <div class="image-reel">
+        <img src="media/barrels.png" alt="The barrels">
+        <img src="media/barrelplane.png" alt="Barrel plane">
+        <img src="media/explosion.png" alt="Background explosion">
+    </div>
+    <hr />
+    <h2>Links</h2>
+    <a href="spec.html">spec.html</a> <br />
+    <a href="src/DKCManual.pdf">Reference PDF</a>
+    <hr />
+    <h2>Other Notes</h2>
+    <h3 style="text-align: center; margin-top: -0.85em; margin-bottom: 1.05em;">(me complaining about the outcome of phase 1)</h3>
+    <p style="padding-bottom:5em;">
+        I only realized how extraordinarily complicated this design was and how messy my execution of it was (especially in regards to text wrapping around 
+        the barrels, which I'm not sure is even possible with Grid) at a point where fixing it would require a complete overhaul of the layout, which would 
+        itself eat into time I don't quite have (and no, an extension wouldn't work for me either, otherwise I would have requested one). Needless to say, 
+        with midterm week coming to a close soon and given my average workload, I will actually have time to redo the CSS correctly, at which point I might 
+        resubmit Phase 1. Less so for the grade - I've accepted that I kinda botched the assignment and will face whatever grade I end up getting - but moreso
+        for myself because I'm not one to be satisfied with submitting something half-baked and presenting it as final. You can re-grade it if you want, and 
+        if you do, think of it like a post-launch update. Anywho, thanks  for reading my little rant. Here's a funny video I found recently for your troubles 
+        <a href="https://youtu.be/P3ynj6w2tII" target="_blank">:)</a>
+    </p>
+</body>
+</html>

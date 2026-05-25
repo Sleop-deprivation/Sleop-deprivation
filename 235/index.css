@@ -1,0 +1,103 @@
+﻿body, main
+{
+    font-family: Bahnschrift, 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to bottom, #92beba, #2c7e79);
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
+
+h2
+{
+    text-align:center;
+}
+
+hr 
+{
+    height: 3px;
+    border-width: 0;
+    color: #013d6e;
+    background-color: #013d6e;
+}
+
+main, footer
+{
+    margin: 0rem 13rem;
+}
+
+a
+{
+    text-align:left;
+}
+
+a:link 
+{ 
+    color: #123c69;
+    text-decoration: none;
+}
+
+a:visited 
+{
+    color: #532fa8;
+    text-decoration: none;
+}
+
+a:focus 
+{
+    text-decoration: underline;
+    color: #6de9f7;
+}
+
+a:hover 
+{ 
+    text-decoration: underline;
+}
+
+a:active 
+{
+    color: #6de9f7;
+    text-decoration: underline;
+}
+
+#headImage 
+{
+    width:25rem;
+}
+
+.imglink {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.menu {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item 
+{
+    width:19rem;
+    transition: transform .2s;
+    flex-shrink:1;
+}
+
+.menu-item:hover
+{
+    transform:scale(1.05);
+    cursor:pointer;
+}
+
+#heading, footer
+{
+    text-align:center;
+}
+
+#theme-switcher
+{
+    cursor:pointer;
+    text-align:center;
+    width:1rem;
+    margin:50px 0px 0px 0px;
+}

@@ -1,0 +1,121 @@
+body
+{
+    background-color: pink;
+    font-family: "Marker Felt";
+}
+
+header img
+{
+    width: 20vw;
+    height: auto;
+}
+
+.capitalize
+{
+    text-transform: capitalize;
+}
+
+*
+{
+    text-align: center;
+}
+
+p.capitalize:hover, #repeat-search:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#repeat-search
+{
+    padding: 20px;
+}
+
+#search
+{
+    font-size: 150%;
+    padding-bottom: 10px;
+}
+
+#searchterm
+{
+    font-size: 100%;
+}
+
+input, button, #types
+{
+    font-family: "Marker Felt";
+}
+
+input
+{
+    border:1px solid rgb(43, 0, 43);
+    border-radius: 2px;
+    background-color: rgb(255, 244, 252);
+}
+
+hr
+{
+    width: 75vw;
+    border:1px solid plum;
+    background-color: plum;
+    border-radius: 2px;
+}
+
+#content
+{
+    background-color: rgb(255, 224, 229);
+    border: 2px solid rgb(255, 224, 229);
+    display: inline-grid;
+    gap: 20px;
+    padding: 10px 0;
+    width: 66%;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+#name
+{
+    grid-area: name;
+    font-size: 200%;
+}
+#type
+{
+    grid-area: type;
+}
+#contest-type
+{
+    grid-area: contest-type;
+}
+#appeal
+{
+    grid-area: appeal;
+}
+#jam
+{
+    grid-area: jam;
+}
+#effect
+{
+    grid-area: effect;
+}
+
+#generation-select
+{
+    display: inline-flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 15px;
+}
+
+#filters
+{
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px;
+}

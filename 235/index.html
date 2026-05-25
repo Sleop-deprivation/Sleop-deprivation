@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>235 Home Page</title>
+    <link rel="stylesheet" id="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+    <script>
+        function toggleMusic() {
+            var music = document.getElementById("megalomania");
+            var image = document.getElementById("headImage");
+            if (music != null) {
+                if (music.paused) {
+                    music.play();
+                    image.src = "images/important2.jpg";
+                }
+                else {
+                    music.pause();
+                    image.src = "images/important.jpg";
+                }
+            }
+        }
+
+        function toggleStyle() {
+            let style = document.getElementById("stylesheet");
+            let hrefLength = style.href.length;
+            let music = document.querySelectorAll("audio").item(0);
+            let footer = document.getElementById("theme-switcher");
+            let headImage = document.getElementById("headImage");
+            scroll(0, 0);
+            if (style.href.substring(hrefLength - 9) == "index.css")
+            {
+                style.href = "index2.css";
+                music.id = "megalomania";
+                footer.src = "images/disclaimer.png";
+                headImage.src = "images/important.jpg";
+            }
+            else {
+                style.href = "index.css";
+                if (!music.paused)
+                    toggleMusic();
+                music.id = "disabled";
+                footer.src = "images/moose.jpg";
+                headImage.src = "images/pictureofme.jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div id="heading">
+            <h1>
+                Leo Schindler-Gerendasi's IGME 235 Page
+            </h1>
+            <audio src="megalomania.mp3" id="disabled" loop>Megalomania - Live A Live</audio>
+            <div class="imglink">
+                <img src="images/pictureofme.jpg" alt="A picture of me (real)" onclick="toggleMusic()" id="headImage" />
+            </div>
+            <hr />
+        </div>
+        <p>
+            I am Leo Schindler-Gerendasi, a second-year Game Design and Development major at RIT. I really like playing both video
+            and board games, playing piano, and dabbling in a bit of drawing and pixel art every so often.
+            My goal is to make games that many others like me will enjoy as much as I do. While it's not directly my interest, web
+            design is useful knowledge to have for any programmer, and as such this class will very helpful to me. When I graduate,
+            I hope to join a game studio or any programming job that allows me to use my talents to the fullest.
+        </p>
+        <hr />
+        <h2>Links for class projects:</h2> <!--Reminder to make thumbnails for the projects 256x256 when I make them properly-->
+        <div class="menu">
+            <div class="imglink">
+                <a href="project1" class="project">
+                    <img src="images/project1thumbnail.png" alt="Project 1 preview" class="menu-item" />
+                </a>
+            </div>
+            <div class="imglink">
+                <a href="project2" class="project">
+                    <img src="images/project2thumbnail.png" alt="Project 2 preview" class="menu-item" />
+                </a>
+            </div>
+            <div class="imglink">
+                <a href="project3" class="project">
+                    <img src="images/project3thumbnail.png" alt="Project 3 preview" class="menu-item" />
+                </a>
+            </div>
+        </div><hr />
+        <h2>Links for prior exercises:</h2>
+        <a href="auth">Auth Test</a><br />
+        <a href="error">Error Test</a><br />
+        <a href="game/index.html">Dig Dug Page</a><br />
+        <a href="octopath/index.html">Basic Game Page</a><br />
+        <a href="tetris/tetris.html">Tetris Page</a><br />
+        <hr />
+        <h2>
+            <a href="https://github.com/Sleop-deprivation/IGME-235">
+                Github Repo
+            </a>
+        </h2>
+        <hr />
+        <footer>
+            <p><img src="images/moose.jpg" alt="moose.jpg" id="theme-switcher" onclick="toggleStyle()" /></p>
+        </footer>
+    </main>
+</body>
+</html>

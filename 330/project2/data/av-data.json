@@ -1,0 +1,28 @@
+{
+    "title": "Night Sky Audiovisualizer",
+    "songdata": [
+    {
+        "trackurl": "media/YetAnotherSleeplessNight.wav",
+        "trackname": "Yet Another Sleepless Night",
+        "tracksource": "Leo Schindler-Gerendasi"
+    },
+    {
+        "trackurl": "media/SwampTheme.mp3",
+        "trackname": "The Quiet Swamp",
+        "tracksource": "Bait & Tackle"
+    },
+    {
+        "trackurl": "media/CrudeCrabTheme.mp3",
+        "trackname": "Crab Nebula",
+        "tracksource": "Bait & Tackle"
+    }],
+    "defaults": {
+        "showGradient": true,
+        "showBars": false,
+        "showMoon": true,
+        "showStars": true,
+        "showInvert": false,
+        "showEmboss": false,
+        "drawFrequency": true
+    }
+}

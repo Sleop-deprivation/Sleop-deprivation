@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://pixijs.download/release/pixi.js"></script>
+</head>
+<body>
+    <h1>Hello PixiJS</h1>
+
+    <script>
+        let app = new PIXI.Application({
+            width: 640,
+            height: 360
+        });
+        document.body.appendChild(app.view);
+
+        let sprite = PIXI.Sprite.from('sprites/veryimportant.jpg');
+        sprite.width = 200;
+        sprite.height = 200;
+        sprite.anchor.set(0.5);
+        sprite.x = app.view.width/2;
+        sprite.y = app.view.height/2;
+        app.stage.addChild(sprite);
+
+        sprite.interactive = true;
+        sprite.on('wheel', (event) => { 
+            if (event.deltaY > 0)
+                sprite.rotation += Math.PI / 20; 
+            else
+                sprite.rotation -= Math.PI / 20; 
+        });
+
+        app.ticker.add((deltaTime) => {
+            sprite.on('pointerdown', (event) => {
+                sprite.x = Math.random() * app.view.width;
+                sprite.y = Math.random() * app.view.height;
+            })
+        })
+    </script>
+</body>
+</html>

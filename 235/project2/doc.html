@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <style>
+        body
+        {
+            background-color:rgb(187, 225, 250); 
+            font-family: 'Bahnschrift';
+            padding: 1em 5em;
+            text-align: center;
+        }
+
+        img
+        {
+            width: 20em;
+        }
+
+        #thin-screen
+        {
+            display: flex;
+            align-items: top;
+            padding: 0 2em;
+        }
+        #thin-screen p
+        {
+            justify-self: left;
+        }
+        #thin-screen img
+        {
+            justify-self: right;
+            padding-bottom: 1em;
+        }
+
+        ul, h3, li, p
+        {
+            text-align: left;
+        }
+
+        h1
+        {
+            font-family:'Comic Sans MS'; 
+            margin-top: -0.5em;
+        }
+
+        p > a
+        {
+            text-decoration: none;
+        }
+
+        p > a:hover
+        {
+            text-decoration: underline;
+        }
+
+        #contest, #move
+        {
+            text-align: center;
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            padding-bottom: 15px;
+        }
+        #contest > img, #move > img
+        {
+            width: 100px;
+        }
+
+    </style>
+    <title>doc.html</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Hey gamers, it's me, ya boy, back again with</h3>
+    <h1>
+        <span style="color:red;">d</span><span style="color:orange;">o</span><span style="color:yellow;">c</span><span style="color:yellowgreen;">.</span><span style="color:green;">h</span><span style="color:blue;">t</span><span style="color:indigo;">m</span><span style="color:violet;">l</span>
+    </h1>
+    <hr />
+    <h2>Intro</h2>
+    <p>
+        The overall process of getting the website working was a fair bit more complicated than 
+        I expected going into it. I purposefully tried to limit myself with the knowledge that
+        the development of this project would be coinciding with the development of three
+        other projects and would be far and away the heaviest one, but even so I ran into some issues.
+        I wouldn't say my code is flawless, either. I will admit to forgetting DRY a couple of times
+        throughout my code, and I definitely learned my lesson because those times bit me
+        in the back and were tedious to fix. Regardless, I think I made something pretty good without 
+        wearing myself out completely or requiring an extension (unlike last time), and I do think this
+        assignment for sure deserves at least a 95 (and maybe more for learning something that I probably
+        wouldn't be learning for at least a couple semesters).
+    </p>
+    <hr />
+    <h2>The Process</h2>
+    <h3>Humble beginnings</h3>
+    <p>
+        Finding the move was simple. The URL was just the regular API name followed by the move,
+        with a bit of formatting needed to get the search to run. Namely, the search must be
+        fully lowercase, and any spaces must be replaced with hyphens. This was very easy to convert
+        since all relevant move names have no more than one space and none have hyphens. However,
+        PokeAPI's contest effects aren't listed in the move itself, but rather in a seperate link,
+        since some moves share contest effects. This was the first of many times that nested GET calls
+        were to be used, since after getting a move, I'd need to make a seperate call to get its
+        effects. Additionally, moves used in Contests (from Gen 3, the GBA games) and Super Contests 
+        (from Gen 4, the first DS games) have completely different effects and mechanics between them,
+        as well as different API links, and since I wanted to include both versions of contests,
+        splitting up otherwise identical code into an if statement was a necessity.
+    </p>
+    <h3>I think people who design APIs actually hate web developers</h3>
+    <p>
+        The next challenge came in filtering by Pokemon. PokeAPI does return a Pokemon's moveset
+        as part of the Pokemon data, but it returns the API links to those moves, so getting
+        their data required a nested API call which itself contained a nested API call. That
+        wasn't too big of a deal for individual moves, but one could get returned
+        many seperate moves on a given Pokemon, and the amount of calls would add up rapidly.
+        So I decided to be a bit sneaky and make a couple of bonus calls on-load. Firstly,
+        a list of every move's name that can be learned in Gen 4 is called from PokeAPI, and
+        filtered to include only moves available in Gen 3 for use in a separate list. However,
+        the true sneakiness comes in me making an additional few calls to Bulbapedia via MediaWiki's API.
+        PokeAPI doesn't have a full list of moves by contest type, and making 400+ calls on-load didn't
+        sound ideal. Bulbapedia did have such a list, however, on each type's respective page.
+        Unfortunately, MediaWiki's API is not good, and the text returned through a parse is
+        all of the site's HTML data, which is awful to sort through. My workaround was to get a list of every link
+        on that page, since the moves were directly linked to, filter that list to only include
+        links that were names of moves (using my previously-initialized move list), and store
+        each list of moves by type in their own list. That way, I can reduce the amount of
+        API calls from 50+ when loading the moves to only one when selecting a move returned
+        from the results.
+    </p>
+    <h3>Additional proof that API designers have it out for us</h3>
+    <p>
+        Unfortunately, that came with an additional problem. Some moves changed contest types
+        between Gen 4 and Gen 6 (the 3DS games, and the next appearance of contests). While
+        PokeAPI doesn't have Gen 6 contest data, Bulbapedia does, and some moves were added
+        to two move type lists, since Bulbapedia had linked to them on two contest type lists. This
+        wasn't a problem when finding a single move, since PokeAPI only has pre-Gen 6 contest data,
+        but became very evident once I color-coded search results and found moves of different colors
+        and different types appearing where they shouldn't. This was a big enough issue to warrant a big enough fix.
+        So what I did is that, instead of throwing in the towel and just making 100+ API calls on-load, I learned
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">
+            how to use regular expressions
+        </a>
+        so that I could more easily get a list of every instance of a move or its types being called.
+        The way the list of moves on Bulbapedia looked was Move | Original Type | New Type, and each link's title was 
+        "Name (property), so for every instance of a move link found, the following two links
+        would be the move's original and new type. With the filter made and the hard part out of the way,
+        I removed every instance of the move in the New Type's array, and spent a total of three hours bugfixing
+        a problem that I wouldn't have had to fix if APIs were simply better. I love coding.
+    </p>
+    <h3>That was actually the last of my problems</h3>
+    <p>
+        After that, it was pretty smooth sailing. The rest of the more specific functions
+        required substantially less code and thought, to the point where about 75% of my
+        expected functionality was available for the in-class feedback session, and none of
+        the following issues were far less annoying and far less noteworthy. It was primarily
+        making the site look better, adding some quick and easy proposed features from the 
+        feedback session, and feeling relieved that I actually scoped properly this time. So
+        at the end of the day, I'd call this site a pretty big success.
+    </p>
+    <hr>
+    <h2>Media used</h2>
+    <p>
+        All of the media used were tiny png files of the moves' types, as displayed
+        in Gen 3 and sourced from Bulbapedia, since I think those looked the best with 
+        my website design.
+        <div id="contest">
+            <img src="media/contest-types/cool.png">
+            <img src="media/contest-types/beauty.png">
+            <img src="media/contest-types/cute.png">
+            <img src="media/contest-types/smart.png">
+            <img src="media/contest-types/tough.png">
+        </div>
+        <div id="move">
+            <img src="media/move-types/bug.png">
+            <img src="media/move-types/dark.png">
+            <img src="media/move-types/dragon.png">
+            <img src="media/move-types/electric.png">
+            <img src="media/move-types/fighting.png">
+            <img src="media/move-types/fire.png">
+            <img src="media/move-types/flying.png">
+            <img src="media/move-types/ghost.png">
+            <img src="media/move-types/grass.png">
+            <img src="media/move-types/ground.png">
+            <img src="media/move-types/ice.png">
+            <img src="media/move-types/normal.png">
+            <img src="media/move-types/poison.png">
+            <img src="media/move-types/psychic.png">
+            <img src="media/move-types/rock.png">
+            <img src="media/move-types/steel.png">
+            <img src="media/move-types/water.png">
+        </div>
+    </p>
+</body>
+</html>

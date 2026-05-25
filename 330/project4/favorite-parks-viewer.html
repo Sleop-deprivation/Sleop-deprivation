@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Favorite Parks Viewer</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script type="module">
+
+// TODO: ADD YOUR imports and Firebase setup code HERE
+/* #1 - The Firebase setup code goes here  - both imports, `firebaseConfig` and `app` */
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+import { getDatabase, ref, set, push, onValue, increment } from  "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDnNY2a2pIRtCn2FuHP0z4HSVfx0dWaAUI",
+    authDomain: "high-scores-bebc8.firebaseapp.com",
+    projectId: "high-scores-bebc8",
+    storageBucket: "high-scores-bebc8.appspot.com",
+    messagingSenderId: "1021254562545",
+    appId: "1:1021254562545:web:7afd46269f5eb152252f50"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+console.log(app); // make sure firebase is loaded
+
+const favoritesChanged = (snapshot) => {
+  // Clear #favoritesList
+  favoritesList.innerHTML = "";
+  snapshot.forEach(fav => {
+    const childKey = fav.key;
+    const childData = fav.val();
+    console.log(childKey,childData);
+
+    // Only show parks with > 0 likes
+    if (childData.likes > 0) 
+      favoritesList.innerHTML += `<li><b>${childData.parkName}</b> - Likes: ${childData.likes}</li>`;
+  });
+};
+
+const init = () => {
+  const db = getDatabase();
+  const favoritesRef = ref(db, 'favoriteParks/');
+  onValue(favoritesRef,favoritesChanged);
+};
+
+init();
+
+</script>
+</head>
+<body>
+<header class="hero is-info is-bold p-2">
+  <div class="hero-body">
+      <h1 class="title">Favorite Parks Viewer</h1>
+      <h2 class="subtitle">Because programmers <i>love</i> going outside!</h2>
+  </div>
+</header> 
+  <br /> <br />
+  <div class="hero is-small is-info p-1">
+		<div class="is-info p-1 content">
+			<h2 class="hero-body m-1 title is-bold">Popular Parks</h2>
+      <ul class="hero-body subtitle" id="favoritesList"></ul>
+		</div>
+	</div>
+ </body>
+</html>

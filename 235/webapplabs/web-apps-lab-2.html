@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps Lab 2</title>
+	<style>
+		body{border:1px solid gray;}
+		p b{transform: rotate(20deg)}
+	</style>
+</head>
+<body>
+<h1>My Page</h1>
+<h2>Info</h2>
+<h2>Pictures</h2>
+<h2>More Info</h2>
+<p>Blah <b>Blah</b> Blah</p>
+<p>Blah <b>Blah</b> Blah</p>
+<p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+<footer>Copyright &copy; <b>20XX</b></footer>
+<script>
+	"use strict"; 
+  
+    let h2 = document.getElementsByTagName("h2");
+
+    document.getElementsByTagName("h1")[0].innerHTML = "My UFO Page";
+    h2[0].innerHTML = "My UFO Info";
+    h2[1].innerHTML = "My UFO Pictures";
+    h2[2].innerHTML = "";
+
+    document.body.style.color = "#FF3312";
+    document.body.style.fontFamily = "sans-serif";
+
+    let firstParagraph = document.getElementsByTagName("p")[0].style;
+    firstParagraph.color = "green";
+    firstParagraph.fontWeight = "bold";
+    firstParagraph.fontSize = "2em";
+    firstParagraph.textTransform = "uppercase";
+    firstParagraph.textShadow = "3px 2px #A44";
+    document.getElementsByTagName("p")[0].innerHTML = 
+    "Report your UFO sightings here: <a href='http://www.nuforc.org/'>http://www.nuforc.org/</a>";
+
+    document.getElementsByTagName("p")[1].innerHTML = "";
+
+    document.getElementsByTagName("p")[2].innerHTML = 
+    "<img src='https://entertainment.time.com/wp-content/uploads/sites/3/2011/08/09_1950ssci-fimovies-read-more-http-www-time-com-time-specials-packages-article-0288042068772_2068771_206875700-html-ixzz1szg8wvhv.jpg?w=720&h=480&crop=1' alt='ufo (real)'>"
+
+    document.getElementsByTagName("footer")[0].innerHTML = 
+    "Copyright &copy; Leo Schindler-Gerendasi <b>2022</b>"
+	
+	</script>
+</body>
+</html>

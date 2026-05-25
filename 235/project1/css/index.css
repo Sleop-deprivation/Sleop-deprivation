@@ -1,0 +1,500 @@
+body
+{
+    background-color: #5ab5fb;
+    font-size: 93%;
+    margin: 2.5em 4em;
+    background-image: url("../media/explosion.png");
+    background-position: 43% 50%;
+    background-repeat: no-repeat;
+    background-size: 60vw;
+    background-clip: unset;
+}
+
+main
+{
+    grid-area: main;
+    display: grid;
+    align-items: center;
+    gap: 5px;
+    grid-template-rows: 15em 15em 15em 7em;
+    grid-template-columns: 3fr 1fr auto 1fr 3fr;
+    grid-template-areas:
+    "projects-a projectimg-a . aboutmeimg-a aboutme-a"
+    "projects-b projectimg-b center-image aboutmeimg-b aboutme-b"
+    "projects-c projectimg-c . aboutmeimg-c aboutme-c"
+    ". accounts accounts accounts .";
+}
+
+div a:link
+{
+    color: rgb(29, 0, 214);
+    text-decoration: none;
+}
+div a:visited
+{
+    color: rgb(83, 0, 139);
+}
+div a:focus
+{
+    color: white;
+}
+div a:hover
+{
+    text-decoration: underline;
+}
+div a:active
+{
+    color: aqua;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #3b5bf8;
+    padding: 0.25em;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 115%;
+}
+header > nav > a, #accounts > nav > a
+{
+    color: white;
+    text-decoration: none;
+}
+
+#projects-a
+{
+    grid-area: projects-a;
+}
+#projects-b
+{
+    grid-area: projects-b;
+}
+#projects-c
+{
+    grid-area: projects-c;
+}
+#aboutme-a
+{
+    grid-area: aboutme-a;
+}
+#aboutme-b
+{
+    grid-area: aboutme-b;
+}
+#aboutme-c
+{
+    grid-area: aboutme-c;
+}
+
+#projectimg-a
+{
+    grid-area: projectimg-a;
+    grid-column: 2 / span 2;
+    position: relative;
+    left: 7em;
+    bottom: -6em;
+    width: 100%;
+    height: auto;
+}
+#projectimg-b
+{
+    grid-area: projectimg-b;
+    grid-column: 2 / span 2;
+    position: relative;
+    left: 2em;
+    bottom: -1em;
+    width: 100%;
+    height: auto;
+}
+#projectimg-c
+{
+    grid-area: projectimg-c;
+    grid-column: 2 / span 2;
+    position: relative;
+    left: 4em;
+    bottom: 5em;
+    width: 100%;
+    height: auto;
+}
+#aboutmeimg-a
+{
+    grid-area: aboutmeimg-a;
+    grid-column: 3 / span 2;
+    position: relative;
+    left: -4em;
+    bottom: -4em;
+    width: 100%;
+    height: auto;
+}
+#aboutmeimg-b
+{
+    grid-area: aboutmeimg-b;
+    grid-column: 3 / span 2;
+    position: relative;
+    left: -1em;
+    bottom: 1em;
+    width: 100%;
+    height: auto;
+}
+#aboutmeimg-c
+{
+    grid-area: aboutmeimg-c;
+    grid-column: 3 / span 2;
+    position: relative;
+    left: -3em;
+    bottom: 8em;
+    width: 100%;
+    height: auto;
+}
+
+#accounts
+{
+    grid-area: accounts;
+}
+
+.subsection-left
+{
+    text-align: left;
+}
+
+.subsection-right
+{
+    text-align: right;
+    position: relative;
+    margin: 0%;
+}
+
+.subsection-center
+{
+    text-align: center;
+    align-self: flex-start;
+}
+
+.subsection-center > img
+{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 30em;
+    height: auto;
+}
+
+#accounts > img
+{
+    max-width: 5em;
+}
+
+#header
+{
+    width: auto;
+    max-width: 40em;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#center-image
+{
+    grid-area: center-image;
+    position: relative;
+    bottom: 7em;
+}
+
+#small_picture > img
+{
+    width:40em;
+    position: relative;
+    left:10em;
+    min-width: 20em;
+}
+
+div > h1, div > h2
+{
+    font-family: "Cooper", Arial, Helvetica, sans-serif;
+}
+
+div > h1
+{
+    color: #26489d;
+}
+
+div > h2
+{
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: -0.7rem;
+}
+
+#projects-header, #aboutme-header, #accounts > hr
+{
+    display: none;
+}
+
+#header p
+{
+    font-weight: bold;
+}
+
+div > p
+{
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+
+div > img
+{
+    max-width: 15em;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+}
+
+#accounts > h2
+{
+    padding-bottom: 20px;
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 850px)
+{
+    body
+    {
+        background-image: none;
+    }
+    
+    main
+    {
+        display: grid;
+        align-items: start;
+        gap: 5px;
+        /*grid-template-columns: 10em 10em 10em;
+        grid-template-rows: repeat(2, 5em 10em 5em) 5em;*/
+        grid-template-columns: auto auto auto;
+        grid-template-rows: repeat(2, 0.25fr auto auto) auto;
+        grid-template-areas:
+        "aboutme-header aboutme-header aboutme-header"
+        "aboutme-a aboutme-b aboutme-c"
+        "aboutmeimg-a aboutmeimg-b aboutmeimg-c"
+        "projects-header projects-header projects-header"
+        "projects-a projects-b projects-c"
+        "projectimg-a projectimg-b projectimg-c"
+        "accounts accounts accounts";
+    }
+
+    header
+    {
+        position: sticky;
+        padding: 0.5em;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #5ab5fb;
+        z-index: 1;
+        margin: 0%;
+        padding-bottom: 0.75em;
+    }
+    
+    #projects-header, #aboutme-header
+    {
+        display: initial;
+        font-size: 125%;
+    }
+
+    hr
+    {
+        height: 0.5px;
+        color: white;
+        background-color: white;
+        border-style: solid;
+        margin-top: 15px;
+    }
+
+    h2, p
+    {
+        text-align: center;
+    }
+
+    #projects-header
+    {
+        grid-area: projects-header;
+    }
+
+    #aboutme-header
+    {
+        grid-area: aboutme-header;
+    }
+
+    #center-image
+    {
+        display: none;
+    }
+
+    #projectimg-a, #projectimg-b, #projectimg-c, #aboutmeimg-a, #aboutmeimg-b, #aboutmeimg-c
+    {
+        position: static;
+        grid-column: auto;
+        object-fit: scale-down;
+        justify-self: center;
+        display: inline;
+        height: auto;
+        max-width: 20em;
+        margin: 0%;
+    }
+
+    img
+    {
+        resize: both;
+    }
+
+    #accounts-header
+    {
+        font-size: 1.87em;
+        padding-top: 10px;   
+    }
+
+    #accounts > hr
+    {
+        display: block;
+        height: 0.5px;
+        color: white;
+        background-color: white;
+        border-style: solid;
+        margin-top: 15px;
+    }
+}
+
+@media only screen and (max-width: 850px) 
+{
+    body
+    {
+        background-image: none;
+    }
+    
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        /*grid-template-rows: repeat(8, 1fr);
+        grid-template-areas: 
+        "aboutme-a"
+        "aboutme-b"
+        "aboutme-c"
+        "projects-a"
+        "projects-b"
+        "projects-c"
+        "accounts";*/
+        text-align: left;
+        width: auto;
+    }
+    
+    #projects-header, #aboutme-header
+    {
+        display: initial;
+        font-size: 125%;
+        padding-top: 10px;
+    }
+
+    #aboutme-header
+    {
+        order: -1;
+    }
+
+    hr
+    {
+        height: 0.5px;
+        color: white;
+        background-color: white;
+        border-style: solid;
+        visibility: visible;
+    }
+
+    #small_picture
+    {
+        visibility: collapse;
+    }
+
+    header
+    {
+        position: sticky;
+        padding: 0.5em;
+        top: 0;
+        width: auto;
+        text-align: center;
+        background-color: #5ab5fb;
+        z-index: 2;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .subsection-center
+    {
+        text-align: center;
+        align-self: center;
+    }
+
+    .subsection-right
+    {
+        text-align: left;
+        margin-left: 0;
+        width: auto;
+        padding: 0%;
+        order: -1;
+    }
+
+    .subsection-left
+    {
+        margin-right: 0;
+        width: auto;
+    }
+
+    #main_picture
+    {
+        position: fixed;
+        top: 10em;
+        min-width: 50px;
+        max-width: 100px;
+        text-align: center;
+        display: none;
+    }
+
+    #center-image
+    {
+        display: none;
+    }
+
+    #projectimg-a, #projectimg-b, #projectimg-c, #aboutmeimg-a, #aboutmeimg-b, #aboutmeimg-c
+    {
+        position: static;
+        left: 0;
+        bottom: 0;
+        width: 15em;
+    }
+
+    #accounts-header
+    {
+        font-size: 1.87em;
+        padding-top: 10px;   
+    }
+
+    #accounts > hr
+    {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    #accounts > nav
+    {
+        width: 70vw;
+    }
+    
+}

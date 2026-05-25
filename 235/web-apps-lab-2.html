@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DOM-3</title>
+	<style>
+		body{border:1px solid gray;}
+		p b{transform: rotate(20deg)}
+	</style>
+</head>
+<body>
+<h1>My Page</h1>
+<h2>Info</h2>
+<h2>Pictures</h2>
+<h2>More Info</h2>
+<p>Blah <b>Blah</b> Blah</p>
+<p>Blah <b>Blah</b> Blah</p>
+<p id="lastParagraph">Blah <b>Blah</b> Blah</p>
+<footer>Copyright &copy; <b>20XX</b></footer>
+<script>
+	"use strict"; 
+  
+    document.getElementsByTagName("h1")[0].innerHTML = "My UFO Page";
+    let h2 = document.getElementsByTagName("h2");
+    h2[0].innerHTML = "My UFO Info";
+    h2[1].innerHTML = "My UFO Pictures";
+    h2[2].innerHTML = "";
+
+    document.body.style.fontFamily = "sans-serif";
+    document.body.style.color = "#ff2305";
+	
+	</script>
+</body>
+</html>

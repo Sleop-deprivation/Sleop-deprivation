@@ -1,0 +1,153 @@
+body
+{
+    background-color: #f8994a;
+    font-size: 93%;
+    margin: 2.5em 4em;
+    background-image: url("explosion.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 85%;
+    background-clip: unset;
+}
+
+main
+{
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 2fr 0.3fr 1.9fr 0.4fr 0.3fr 0.5fr 0.2fr 0.5fr;
+    grid-template-rows: 0.5fr 0.1fr 0.33fr 0.15fr;
+    /*grid-template-areas:
+    "left_section main_picture right_text"
+    "left_section main_picture right_text"
+    "left_section main_picture right_text"
+    "left_section section_h right_text"; */
+    grid-template-areas:
+    "left_section main_picture main_picture main_picture section_e section_e section_e section_e"
+    "left_section main_picture main_picture main_picture . section_f section_f section_f"
+    "small_picture main_picture main_picture main_picture section_g section_g section_g section_g"
+    "small_picture . section_h section_h . . . .";
+}
+
+#left_section
+{
+    grid-area: left_section;
+    text-align: left;
+    margin-right: 1em;
+}
+
+#section_e
+{
+    grid-area: section_e;
+    padding-bottom: 1em;
+}
+
+#section_f
+{
+    grid-area: section_f;
+}
+
+#section_g
+{
+    grid-area: section_g;
+    padding-bottom: 3em;
+}
+
+#section_h
+{
+    grid-area: section_h;
+    align-self: flex-end;
+}
+
+.subsection-right
+{
+    text-align: right;
+    margin-left: 1em;
+    position: relative;
+    margin: 0%;
+    align-self: flex-start;
+}
+
+.subsection-center
+{
+    text-align: center;
+    align-self: flex-start;
+}
+
+.subsection-center > img
+{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 107%;
+    top: -8.5em;
+    z-index: -1;
+    min-width: 53%;
+}
+
+#header
+{
+    grid-area: header;
+    width: auto;
+    max-width: 40em;
+}
+
+#right_text
+{
+    grid-area: right_text;
+    display: flex;
+    flex-direction: column;
+    width: 30em;
+}
+
+#main_picture
+{
+    grid-area: main_picture;
+    margin-bottom: 3em;
+}
+
+#small_picture
+{
+    grid-area: small_picture;
+    justify-self: right;
+}
+
+#small_picture > img
+{
+    width:40em;
+    position: relative;
+    left:10em;
+    min-width: 20em;
+}
+
+div > h1, div > h2
+{
+    font-family: "Cooper";
+}
+
+div > h1
+{
+    color: #4065c2;
+}
+
+div > h2
+{
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: -0.7rem;
+}
+
+#header p
+{
+    font-weight: bold;
+}
+
+div > p
+{
+    font-family: "Josefin Sans";
+}
+
+#left_section > p, .subsection-right > p
+{
+    margin-bottom: 2em;
+}

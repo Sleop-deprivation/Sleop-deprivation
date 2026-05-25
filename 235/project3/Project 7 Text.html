@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html onkeydown = "logKey(event);">
+	<head>
+		<title>My First Game From Like Years Ago</title>
+		<style>
+		body
+		{
+			font-family:Consolas;
+			font-size:36px;
+		}
+		</style>
+		<script>
+			const UP = 38, DOWN = 40, LEFT = 37, RIGHT = 39, PLAYER = 1, ENEMY = 2, TREE = 3, ROCK = 4, CAVEWARP = 5;
+			function initialize()
+			{
+				xArray = 1;
+				yArray = 4;
+				collisonArray = [[3,3,3,3,3,3,3,3],
+								[3,0,0,0,1,0,0,3],
+								[3,0,0,0,0,0,0,3],
+								[3,0,0,3,3,0,0,3],
+								[3,0,0,3,3,0,0,3],
+								[3,0,0,0,0,0,0,3],
+								[3,0,0,0,0,0,0,3],
+								[3,3,3,0,0,3,3,3]];
+				textArray = [[],[],[],[],[],[],[],[]];
+				hp = 50
+				mp = 20
+				room = 1
+				createTable(textArray);
+				convertToText();
+
+			}
+			
+			function logKey(e)
+			{
+				collisonArray[xArray][yArray] = 0;
+				
+				if (e.which == UP && collisonArray[xArray - 1][yArray] != 3 && collisonArray[xArray - 1][yArray] != 4)
+				{
+					xArray --;
+					if (xArray < 1)
+					{
+						xArray = 6;
+						room --;
+						generateNewLayout(room);
+					}
+				}
+				else
+				{
+					if (e.which == DOWN && collisonArray[xArray + 1][yArray] != 3 && collisonArray[xArray + 1][yArray] != 4)
+					{
+						xArray ++;
+						if (xArray > 6)
+						{
+							xArray = 1;
+							room ++;
+							generateNewLayout(room);
+						}
+					}
+					else
+					{
+						if (e.which == LEFT && collisonArray[xArray][yArray - 1] != 3 && collisonArray[xArray][yArray - 1] != 4)
+						{
+							yArray --;
+							if (yArray < 1)
+							{
+								yArray = 6;
+								room -= 3;
+								generateNewLayout(room);
+							}
+						}
+						else
+						{
+							if (e.which == RIGHT && collisonArray[xArray][yArray + 1] != 3 && collisonArray[xArray][yArray + 1] != 4)
+							{
+								yArray ++;
+								if (yArray > 6)
+								{
+									yArray = 1
+									room += 3;
+									generateNewLayout(room);
+								}
+							}
+						}
+					}
+				}
+				collisonArray[xArray][yArray] = 1;
+				convertToText();
+			}
+
+			function convertToText()
+			{
+				document.body.innerHTML = "";
+				for (var i = 0; i < 8; i++)
+				{
+					for (var j = 0; j < 8; j++)
+					{
+						if (collisonArray[i][j] == PLAYER)
+							textArray[i][j] = "π";
+						if (collisonArray[i][j] == TREE)
+							textArray[i][j] = "T";
+						if (collisonArray[i][j] == 0)
+							textArray[i][j] = "⠀";
+						if (collisonArray[i][j] == ROCK)
+							textArray[i][j] = "O";
+						if (collisonArray[i][j] == CAVEWARP)
+							textArray[i][j] = "#";
+					}
+				}
+				createTable(textArray);
+			}
+			
+			function createTable(tableData) 
+			{
+				var table = document.createElement('table');
+				var tableBody = document.createElement('tbody');
+
+				tableData.forEach(function(rowData) 
+				{
+					var row = document.createElement('tr');
+
+					rowData.forEach(function(cellData) 
+					{
+						var cell = document.createElement('td');
+						cell.appendChild(document.createTextNode(cellData));
+						row.appendChild(cell);
+					});
+
+					tableBody.appendChild(row);
+				});
+
+				table.appendChild(tableBody);
+				document.body.appendChild(table);
+				
+				
+				var displayHp = document.createElement("p");
+				displayHp.innerHTML = "<div id = hpdisplay></div>";
+				document.body.appendChild(displayHp);
+				var outputHp = document.getElementById("hpdisplay");
+				outputHp.innerHTML = "HP: " + hp;
+			}
+			function generateNewLayout(r)
+			{
+				if (r == 1)
+					collisonArray = [[3,3,3,3,3,3,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,3,3,0,0,3],
+									[3,0,0,3,3,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,3,3,0,0,3,3,3]];
+				if (r == 2)
+					collisonArray = [[3,3,3,0,0,3,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,0],
+									[3,0,0,0,0,0,0,0],
+									[3,0,3,3,0,0,0,0],
+									[3,0,0,0,0,0,0,0],
+									[3,3,0,0,0,0,0,3],
+									[3,3,3,3,3,0,0,3]];
+				if (r == 3)
+					collisonArray = [[3,3,3,3,3,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,0],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,3,3,3,0,0],
+									[3,0,0,3,3,3,0,3],
+									[3,3,3,3,3,3,3,3]];
+				if (r == 4)
+					collisonArray = [[3,3,3,3,3,3,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,3,3,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,3,3,0,0,3],
+									[3,3,0,0,0,0,3,3],
+									[3,0,0,0,0,0,0,3]];
+				if (r == 5)
+					collisonArray = [[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[0,0,0,0,0,0,0,3],
+									[0,0,0,0,0,0,0,0],
+									[0,0,0,0,0,0,0,0],
+									[0,0,0,3,3,0,0,3],
+									[3,0,0,3,3,0,0,3],
+									[3,3,3,3,3,3,3,3]];
+				if (r == 6)
+					collisonArray = [[3,3,3,3,3,3,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[0,0,0,0,3,3,0,0],
+									[3,0,0,0,3,3,0,0],
+									[0,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,3,3,3,3,3,3,3]];
+				if (r == 7)
+					collisonArray = [[3,3,3,3,3,3,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,4,4,4,4,0,3],
+									[3,0,4,5,5,4,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,3,0,0,0,0,3,3],
+									[3,3,3,0,0,3,3,3]];
+				if (r == 8)
+					collisonArray = [[3,3,3,0,0,3,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[0,0,0,0,0,0,3,3],
+									[0,0,0,0,0,0,3,3],
+									[3,0,0,0,0,0,3,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3]];
+				if (r == 9)
+					collisonArray = [[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[0,0,0,0,0,0,0,3],
+									[0,0,0,3,3,0,0,3],
+									[3,0,0,3,3,0,0,3],
+									[3,0,0,0,0,0,0,3],
+									[3,3,3,3,3,3,3,3]];
+			}
+		</script>
+	</head>
+	
+	<body onload = "initialize();">
+</html>

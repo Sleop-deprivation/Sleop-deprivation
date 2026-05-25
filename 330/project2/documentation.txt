@@ -1,0 +1,10 @@
+~~~ DOCUMENTATION ~~~
+I. Added bass and treble nodes to the audio routing graph
+II. Created StarSprite, which as the name implies, is a sprite of a star. It uses star-spritesheet.png to animate itself twinkling, and its size changes based on the
+    value of audioData at its index in the canvas.js's stars array, similarly to how the bars increase in length. It also has functions to externally reposition and
+    resize it. The reposition() function is called by canvas.js when the StarSprite is loaded to move it to its proper x-position in the canvas, and again when it's
+    finished with its animation, which moves it to a new position in the y-axis and resets its animation from start. The resize() function is called on every frame 
+    by canvas.js, where it resizes the star based on the conditions mentioned prior.
+III. av-data.json includes the app's title; each of the songs' names, file paths, and source games; and the default values for the simulation
+IV. 15%, as although the UI didn't change too much, it's a pretty little nighttime scene with relaxing music, and the custom assets I made compensate for the 
+    more minimal UI (which I don't think is bad for what the simulation is).

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>megalomania.mp3</title>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+</head>
+<body>
+    <header>
+        <h1>
+            hello chat
+        </h1>
+        <audio src="megalomania.mp3" id="megalomania">Megalomania - Live A Live</audio>
+        <img src="images/important.jpg" alt="A picture of me (real)" onclick="toggleMusic()" id="moose"/>
+        <p>^ a picture of me (real)</p>
+        <br />
+        <script>
+            function toggleMusic()
+            {
+                var x = document.getElementById("megalomania");
+                var y = document.getElementById("moose");
+                if (x.paused)
+                {
+                    x.play();
+                    y.src = "images/important2.jpg";
+                }
+                else
+                {
+                    x.pause();
+                    y.src = "images/important.jpg";
+                }
+            }
+        </script>
+    </header>
+    <main>
+        <p>i am leo, the world's bestestest coder and especially graphic designer. i make only good video games and play only good video games.
+        what you see before you is but a fraction of what i am capable of making. however, i require more time to unleash my true power. meanwhile, 
+        feast thine eyes on what i graciously allowed you puny mortals to glimpse.</p>
+        <br />
+    </main>
+    <footer>
+        <h2>links for prior exercises:</h2>
+        <a href="../../auth">auth test</a><br />
+        <a href="../../error">error</a><br />
+        <a href="../../game/index.html">dig dug page</a><br />
+        <a href="../../octopath/index.html">octopath traveler page</a><br />
+        <h2>links for class projects:</h2>
+        <a>project 1: a website</a><br />
+        <a>project 2: some web application</a><br />
+        <a>project 3: the best video game ever made</a><br />
+        <h2>github repo:</h2>
+        <a href="https://github.com/Sleop-deprivation/IGME-235">github repo</a><br />
+        <p>(this is a temporary site. please don't grade this and please don't get square enix to sue me)</p>
+    </footer>
+</body>
+</html>

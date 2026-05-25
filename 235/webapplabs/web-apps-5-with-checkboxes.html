@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Web Apps Lab 5 (extra credit)</title>
+	<style>
+		body{
+			font-family:sans-serif;
+		}
+		#colorform{
+			background-color:#dfecdf;
+			color: #111;
+			padding:1em;width:400px;
+		}
+		#colorform p#info{
+			background-color:white;
+			color: black;
+			width:300px;
+			height:100px;
+			padding:.5em;
+		}
+		
+		#colorform legend{ 
+			font-weight:bold;
+			font-size:1.2em;
+		}
+	</style>
+</head>
+<body>
+
+<div id="colorform">
+	<legend>Choose your favorite colors!</legend>
+	<p><input type="checkbox" name="colorGroup" id="colorGroupRed" value="red" /> Red</p>
+	<p><input type="checkbox" name="colorGroup" id="colorGroupGreen" value="green" /> Green</p>
+	<p><input type="checkbox" name="colorGroup" id="colorGroupBlue" value="blue" /> Blue</p>
+	<p><button id="colorButton" type="button">Submit</button></p>
+	<p id="info"></p>
+</div>
+
+<script>
+    let selectChoice = (e) => {
+        currentChoice = "";
+		for (let element of options)
+		{
+			if (element.checked)
+				currentChoice = addColor(element.value, currentChoice);
+		}
+		if (currentChoice !== "")
+		{
+			currentChoice += "!";
+			info.innerHTML = "You have selected " + currentChoice;
+		}
+		else
+			info.innerHTML = "";
+    };
+    let confirmChoice = (e) => {
+        if (currentChoice)
+        {
+        	currentChoice = "";
+			for (let element of options)
+			{
+				if (element.checked)
+					currentChoice = addColor(element.value, currentChoice);
+			}
+            info.innerHTML = "Your FINAL CHOICE is " + currentChoice + "!";
+        }
+    };
+	let addColor = (color, currentString) => {
+		if (currentString === "")
+			currentString = color;
+		else
+			currentString += " and " + color;
+		return currentString;
+	}
+
+    let options = document.querySelectorAll("input");
+    let info = document.getElementById("info");
+    let currentChoice = null;
+
+    for (let element of options)
+    {
+        element.addEventListener("change", selectChoice);
+    }
+    document.getElementById("colorButton").addEventListener("click", confirmChoice);
+    
+</script>
+</body>
+</html>

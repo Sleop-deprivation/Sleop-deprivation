@@ -1,0 +1,71 @@
+﻿body {
+    font-family: 'Comic Sans MS', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to right, red, orange, yellow, orange, yellow, green, yellow, green, blue, green, blue, indigo, blue, indigo, violet, indigo, violet, red, violet, red, orange);
+    font-size: 0.97rem;
+    line-height: 1.2rem;
+}
+
+#heading, h2
+{
+    text-align:center;
+}
+
+main, footer
+{
+    margin: 0rem 13rem;
+}
+
+a
+{
+    text-align:left;
+}
+
+.imglink {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#headImage 
+{
+    width: 30rem;
+    transition: transform .2s;
+}
+
+.menu
+{
+    display:flex;
+    gap: 3rem;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.menu-item 
+{
+    width:19rem;
+    transition: transform .2s;
+    flex-shrink:1;
+}
+
+.menu-item:hover, #headImage:hover
+{
+    transform:scale(1.05);
+    cursor:pointer;
+}
+
+footer
+{
+    text-align: center;
+}
+
+#theme-switcher
+{
+    cursor: pointer;
+    text-align: center;
+    width: 45rem;
+}
+
+hr
+{
+    display:none;
+}

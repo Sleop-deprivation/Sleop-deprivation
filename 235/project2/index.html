@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <title>Pokémon Contest Reference</title>
+</head>
+<body>
+    <header>
+        <img src="media/site-logo.png" alt="Pokemon Contest Reference">
+    </header>    
+    <div class="widgets" id="search">
+        Search for a move:
+        <input id="searchterm" type="text" size="20" maxlength="20" placeholder="Hyper Beam" />
+    </div>
+    <div class="widgets">
+        <button type="button" id="search-button">Search</button>
+        <button type="button" id="reset">Reset</button>
+    </div>
+    <hr>
+    <div class="widgets">
+        <form id="generation-select">
+            <div>
+                <input type="radio" id="gen3" name="generation" value="gen3" onclick="selectChoice('gen3')" checked="checked">
+                <label for="gen3">Contests (RSE)</label><br>
+            </div>
+            <div>
+                <input type="radio" id="gen4" name="generation" value="gen4" onclick="selectChoice('gen4')">
+                <label for="gen4">Super Contests (DPPt)</label><br>
+            </div>
+        </form>
+    </div>
+    <br>
+    <div id="filters">
+        <div class="widgets">
+            Filter by Pokémon:
+            <input id="pokemon-search" type="text" size="20" maxlength="20" placeholder="Raichu" />
+        </div>
+        <div class="widgets">
+            <label for="types">Filter by contest type:</label>
+            <select name="types" id="types">
+                <option value="none">None</option>
+                <option value="0">Cool</option>
+                <option value="1">Beautiful</option>
+                <option value="2">Cute</option>
+                <option value="3">Smart</option>
+                <option value="4">Tough</option>
+              </select>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div id="status">Ready to search!</div>
+    
+    <div id="content">
+        <h2>Tips:</h2>
+        <p>RSE = Ruby/Sapphire/Emerald (Generation 3), DPPt = Diamond/Pearl/Platinum (Generation 4)</p>
+        <p>If a searched move is returned successfully, it will ignore the contest type filter.</p>
+        <p>Only one of the filters needs to be filled before searching, but the resulting move list may be quite long.</p>
+        <p>When given a list of moves, you can click on one to automatically give you that move's data.</p>
+        <p>After searching for a move from a list, you can repeat your last search with the button on the bottom.</p>
+        <p>The last search will also be saved upon closing the page, and will be there when it's re-opened.</p>
+        <p>You can only access the data of Pokémon and moves if they actually appear in the selected games.</p>
+    </div>
+    <br>
+    <div id="repeat-search" style="display: none;">Repeat Last Search</div>
+</body>
+</html>

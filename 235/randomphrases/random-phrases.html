@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"> 
+    <title>Wario's Tips for Summer</title>
+</head>
+<style>
+    body
+    {
+        background-color: rgb(255, 255, 187);
+        background-image: url("wariostips.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 12vh;
+        background-size: 33em;
+    }
+
+    p
+    {
+        font-family: 'Permanent Marker', cursive;
+    }
+
+    #direction-one
+    {
+        bottom: -32vh;
+    }
+    #direction-two
+    {
+        bottom: -24.5vh;
+    }
+    #direction-three
+    {
+        bottom: -17vh;
+        width: 200px;
+    }
+
+    .directions
+    {
+        position: relative;
+        font-size: 30px;
+        width: 350px;
+        left: -160px;
+    }
+    #directions
+    {
+        position: relative;
+        left: 50vw;
+        top: -0.5em;
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+    }
+
+    header
+    {
+        text-align: center;
+        margin: auto;
+        width: 90%;
+        font-family: 'Permanent Marker', cursive;
+        margin-bottom: -11.5vh;
+    }
+
+    #button
+    {
+        position: absolute;
+        text-align: center;
+        margin: auto;
+        bottom: 3em;
+        right: 50vw;
+    }
+    button
+    {
+        position: relative;
+        border: 3px solid rgb(177, 177, 0);
+        background-color: yellow;
+        color: blueviolet;
+        font-family: 'Permanent Marker', cursive;
+        font-size: 20px;
+        width: 10em;
+        height: 2em;
+        left: 100px;
+    }
+    button:hover
+    {
+        background-color: rgb(255, 225, 0);
+    }
+    button:active
+    {
+        background-color: blueviolet;
+        color: yellow;
+        border-color: rgb(104, 18, 183);
+    }
+
+    #name
+    {
+        position: fixed;
+        margin: auto;
+        transform: rotate(90deg);
+        left: -7em;
+        top:50%;
+    }
+
+    @media only screen and (max-width: 750px)
+    {
+        body
+        {
+            background-size: 20em;
+        }
+
+        .directions
+        {
+            font-size: 17px;
+            width: 200px;
+            left: -100px;
+            padding-bottom: 27px;
+        }
+        #directions
+        {
+            width: 200px;
+            top: -4em;
+        }
+        #direction-three
+        {
+            width: 115px;
+        }
+
+        #button
+        {
+            bottom: 15em;
+        }
+    }
+
+</style>
+<body onload="randomQuote()">
+    <header>
+        <h1>Wario's Tips for Summer</h1>
+    </header>
+    <div id="directions">
+        <p id="direction-one" class="directions">drink all the shampoo in the house</p>
+        <p id="direction-two" class="directions"></p>
+        <p id="direction-three" class="directions"></p>
+    </div>
+    <div id="button">
+        <button>
+            New Idea
+        </button>
+    </div>
+    <p id="name">Made by Leo Schindler-Gerendasi</p>
+
+    <script>
+        const phrases = [
+            ["drink all the shampoo in the house", " ", " "],
+            ["take a swim to cool off", "don't forget to wear sunscreen", "santa isn't real and jesus didn't happen"],
+            ["remember to stay hydrated", "take a break from the sun every hour", "evade your taxes for 24 years in a row"],
+            ["spend lots of time with friends", "enjoy the seasonal food", "post your uncle's ip address on twitter"],
+            ["bug spray protects against pests", "have a hearty barbecue with family", "stare at the sun for 37 minutes straight"]];
+
+        let displayQuote = (num = 0) => {
+            for (let i = 0; i < 3; i++)
+            {
+                directions[i].innerHTML = phrases[num][i];
+            }
+        }
+        let randomQuote = () => { displayQuote(Math.floor(Math.random() * phrases.length)); }
+        
+        let directions = document.getElementsByTagName("p");
+        let button = document.getElementById("button");
+
+        button.addEventListener("click", randomQuote);
+    </script>
+</body>
+</html>

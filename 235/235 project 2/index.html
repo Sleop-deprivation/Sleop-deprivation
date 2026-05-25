@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="selector">
+        <div class="widgets">
+            Find me  
+            <select id="limit">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    
+        <div class="widgets">
+            GIFs of 
+            <input id="searchterm" type="text" size="20" maxlength="20" autofocus value="hyper-beam" />
+        </div>
+    </div>
+    <div class="widgets">
+        <button type="button" id="search" class="green">Find some GIFs!<br />:-)</button>
+    </div>
+    <hr>
+    <div id="status">Ready to Search!</div>
+    
+    <h2>Results</h2>
+    <div id="content">
+        <p>No data yet!</p>
+    </div>
+</body>
+</html>

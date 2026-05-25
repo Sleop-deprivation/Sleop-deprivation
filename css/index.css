@@ -1,0 +1,303 @@
+body
+{
+    background-image: linear-gradient(to bottom, #5ab5fb, #29baae);
+    text-align: center;
+    padding: 2% 5% 5% 5%;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+.ta-right
+{
+    text-align: right;
+}
+.ta-left
+{
+    text-align: left;
+}
+hr
+{
+    background-color:#3b5bf8;
+    color: #3b5bf8;
+    height: 2px;
+    border-color: #3b5bf8;
+    border-style: solid;
+}
+.grow-on-hover
+{
+    transition: transform .2s;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    column-gap: 50px;
+}
+.grow-on-hover.ta-right
+{
+    flex-direction: row-reverse;
+}
+.grow-on-hover:hover
+{
+    transform:scale(1.03);
+}
+
+#sections, #accounts
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.25em;
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 115%;
+}
+#sections
+{
+    background-color: #3b5bf8;
+}
+#accounts
+{
+    background-color: #026568;
+}
+nav, nav > a
+{
+    color: white;
+    text-decoration: none;
+}
+#sections > nav > a:hover, #accounts > nav > a:hover
+{
+    text-decoration: underline;
+}
+div
+{
+    align-self: center;
+}
+
+.grow-on-hover a:link
+{
+    text-decoration: none;
+    color: black;
+}
+.grow-on-hover a:hover
+{
+    text-decoration: underline;
+}
+.grow-on-hover a:focus, .grow-on-hover a:active
+{
+    color: white;
+}
+.grow-on-hover a:visited
+{
+    text-decoration: none;
+    color: purple;
+}
+
+#major-projects
+{
+    display: grid;
+    grid-area: auto;
+    gap: 5px;
+    grid-template-columns: 3fr auto 3fr;
+    grid-template-rows: auto 3fr 3fr;
+    grid-template-areas:
+        ". major-proj-head ."
+        "pit pit pit"
+        "bait-tackle bait-tackle bait-tackle"
+        "changeling changeling changeling";
+    padding-bottom: 25px;
+}
+#major-projects > h2
+{
+    grid-area: major-proj-head;
+    font-size: 30px;
+}
+#major-projects h3
+{
+    font-size: 24px;
+}
+#major-projects p
+{
+    font-size: 18px;
+}
+#major-projects img
+{
+    width: 350px;
+    padding-top: 50px;
+    justify-self: center;
+}
+
+#bait-tackle
+{
+    grid-area: bait-tackle;
+}
+#changeling
+{
+    grid-area: changeling;
+}
+#pit
+{
+    grid-area: pit;
+}
+
+#game-jam
+{
+    display: grid;
+    grid-area: auto;
+    row-gap: 5px;
+    column-gap: 20px;
+    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-rows: auto 2fr 2fr;
+    grid-template-areas:
+        ". game-jam-head ."
+        "bownus autumn-idle top-crops"
+        "bownus autumn-idle top-crops";
+}
+#game-jam > .grow-on-hover
+{
+    flex-direction: column-reverse;
+}
+#game-jam img
+{
+    width: 325px;
+    padding-top: 10px;
+    justify-self: center;
+}
+#game-jam > div
+{
+    align-self: start;
+}
+#game-jam > h2
+{
+    grid-area: game-jam-head;
+}
+#autumn-idle
+{
+    grid-area: autumn-idle;
+}
+#bownus
+{
+    grid-area: bownus;
+}
+#top-crops
+{
+    grid-area: top-crops;
+}
+#game-jam + hr
+{
+    background-color:#097eb4;
+    color: #097eb4;
+    border-color: #097eb4;
+}
+
+#classwork
+{
+    display: grid;
+    grid-area: auto;
+    gap: 10px;
+    grid-template-columns: 2fr auto 2fr;
+    grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". classwork-head ."
+        "igme-603 igme-603 igme-603"
+        "igme-601 igme-601 igme-601"
+        "igme-424 igme-424 igme-424"
+        "igme-460 igme-460 igme-460"
+        "igme-235-330 igme-235-330 igme-235-330"
+        "igme-219 igme-219 igme-219"
+        "igme-106 igme-106 igme-106";
+}
+#classwork > h2
+{
+    grid-area: classwork-head;
+}
+#classwork img
+{
+    width: 300px;
+    justify-self: center;
+}
+#classwork p > a
+{
+    text-decoration: underline;
+}
+#igme-603
+{
+    grid-area: igme-603;
+}
+#igme-601
+{
+    grid-area: igme-601;
+}
+#igme-424
+{
+    grid-area: igme-424;
+}
+#igme-460
+{
+    grid-area: igme-460;
+}
+#igme-235-330
+{
+    grid-area: igme-235-330;
+}
+#igme-219
+{
+    grid-area: igme-219;
+}
+#igme-106
+{
+    grid-area: igme-106;
+}
+
+/*
+    The game jam section is kinda annoying with its sizing, so it becomes
+    a single-file list at a higher resolution compared to the rest of the 
+    sections
+*/
+@media only screen and (max-width: 1140px) and (min-width: 850px)
+{
+    #game-jam
+    {
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* 
+    The section where I make this website work on mobile devices.
+    Doing this the quick and dirty way where everything is listed
+    single-file, will make it more directly mobile friendly
+    when I have the time to script it
+*/
+@media only screen and (max-width: 850px) 
+{
+    body
+    {
+        margin: 1.25em 1.5em;
+    }
+    
+    main
+    {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        width: auto;
+    }
+
+    .grow-on-hover, .grow-on-hover.ta-right
+    {
+        flex-direction: column-reverse;
+        text-align: center;
+        transition: unset;
+    }
+    .grow-on-hover:hover
+    {
+        transform:scale(1);
+    }
+
+    #major-projects, #game-jam, #classwork
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    #classwork img
+    {
+        align-self: center;
+    }
+}
